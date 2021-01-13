@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>位运算test1——java实现浮点数转化为二进制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: ‘位运算test1——java实现浮点数转化为二进制’ 给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。&#x3D;&#x3D;分析：&#x3D;&#x3D;   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2       十进制">
+  <meta name="description" content="给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。&#x3D;&#x3D;分析：&#x3D;&#x3D;   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2       十进制整数转化为k进制用除法，小数（浮点数）转化为k进制则用乘法    **">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="位运算test1——java实现浮点数转化为二进制">
 <meta property="og:url" content="http://example.com/2021/01/13/%E4%BD%8D%E8%BF%90%E7%AE%97test1%E2%80%94%E2%80%94java%E5%AE%9E%E7%8E%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: ‘位运算test1——java实现浮点数转化为二进制’ 给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。&#x3D;&#x3D;分析：&#x3D;&#x3D;   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2       十进制">
+<meta property="og:description" content="给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。&#x3D;&#x3D;分析：&#x3D;&#x3D;   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2       十进制整数转化为k进制用除法，小数（浮点数）转化为k进制则用乘法    **">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210113160540639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N1bm55X3R4,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210113160605425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N1bm55X3R4,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210113160623410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N1bm55X3R4,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-01-13T09:02:46.962Z">
-<meta property="article:modified_time" content="2021-01-13T09:06:21.004Z">
+<meta property="article:modified_time" content="2021-01-13T09:15:15.697Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210113160540639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N1bm55X3R4,size_16,color_FFFFFF,t_70">
@@ -87,10 +87,19 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      位运算test1——java实现浮点数转化为二进制
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>title: ‘位运算test1——java实现浮点数转化为二进制’</p>
-<h5 id="给定一个介于0和1之间的实数，（如0-625），类型位double，打印它的二进制表示（0-101，因为小数点后的二进制分别表示0-5，0-25，0-125…-）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。"><a href="#给定一个介于0和1之间的实数，（如0-625），类型位double，打印它的二进制表示（0-101，因为小数点后的二进制分别表示0-5，0-25，0-125…-）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。" class="headerlink" title="给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。"></a>给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。</h5><p>==分析：==<br>   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2</p>
+        <h5 id="给定一个介于0和1之间的实数，（如0-625），类型位double，打印它的二进制表示（0-101，因为小数点后的二进制分别表示0-5，0-25，0-125…-）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。"><a href="#给定一个介于0和1之间的实数，（如0-625），类型位double，打印它的二进制表示（0-101，因为小数点后的二进制分别表示0-5，0-25，0-125…-）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。" class="headerlink" title="给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。"></a>给定一个介于0和1之间的实数，（如0.625），类型位double，打印它的二进制表示（0.101，因为小数点后的二进制分别表示0.5，0.25，0.125….）。如果该数字无法精确地用32位以内地二进制表示，则打印“ERROR”。</h5><p>==分析：==<br>   二进制小数点旁边的1左移一位代表乘以2，右移一位代表除以2</p>
 <p>  <img src="https://img-blog.csdnimg.cn/20210113160540639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N1bm55X3R4,size_16,color_FFFFFF,t_70"></p>
 <p>   十进制整数转化为k进制用除法，小数（浮点数）转化为k进制则用乘法</p>
 <p>   **乘的或者除的数为k **</p>
@@ -110,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/13/%E4%BD%8D%E8%BF%90%E7%AE%97test1%E2%80%94%E2%80%94java%E5%AE%9E%E7%8E%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/" data-id="ckjv5rykl0000qctk016m1bmz" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/01/13/%E4%BD%8D%E8%BF%90%E7%AE%97test1%E2%80%94%E2%80%94java%E5%AE%9E%E7%8E%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/" data-id="ckjv5rykl0000qctk016m1bmz" data-title="位运算test1——java实现浮点数转化为二进制" class="article-share-link">Share</a>
       
       
       
@@ -161,7 +170,7 @@
       <ul>
         
           <li>
-            <a href="/2021/01/13/%E4%BD%8D%E8%BF%90%E7%AE%97test1%E2%80%94%E2%80%94java%E5%AE%9E%E7%8E%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/">(no title)</a>
+            <a href="/2021/01/13/%E4%BD%8D%E8%BF%90%E7%AE%97test1%E2%80%94%E2%80%94java%E5%AE%9E%E7%8E%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/">位运算test1——java实现浮点数转化为二进制</a>
           </li>
         
           <li>
